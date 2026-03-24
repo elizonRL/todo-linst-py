@@ -11,3 +11,10 @@ todos_list = [
 def get_todos():
     return jsonify(todos_list)
   
+@todo_bp.route('/todo/<int:todo_id>', methods=['GET'])
+def get_todo(todo_id):
+    todo = next((todo for todo in todos_list if todo['id'] == todo_id), None)
+    if todo:
+        return jsonify(todo)
+    else:
+        return jsonify({'error': 'Todo not found'}), 404
