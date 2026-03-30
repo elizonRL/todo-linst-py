@@ -14,4 +14,3 @@ sistem_info = {
 @operative_bp.route('/operative', methods=['GET'])
 def get_operative():
     return jsonify({'system_info': sistem_info})
-

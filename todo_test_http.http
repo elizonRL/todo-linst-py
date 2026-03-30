@@ -1,0 +1,15 @@
+@BASE_URL = http://127.0.0.1:5000/todo
+
+GET {{BASE_URL}}
+User-Agent: rest-client
+Accept: application/json
+
+### Crear una nueva tarea en la ruta /todo con el método POST
+
+POST {{BASE_URL}}
+Content-Type: application/json
+
+{
+  "task": "Crear el archivo de hecho",
+  "completed": false
+}
